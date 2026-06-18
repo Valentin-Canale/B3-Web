@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Proyectos
+description: B3 Construcción - Más de 40 años de experiencia en el mercado de la construcción.
+---
+
+<section class="projects-section">
+    <div class="projects-grid">
+        {% for proyecto in collections.proyectos %}
+        <a href="{{ proyecto.url }}" class="project-card fade-in">
+            <img src="{{ proyecto.data.thumbnail }}" alt="{{ proyecto.data.title }}">
+            <div class="project-overlay">
+                <h3>{{ proyecto.data.title }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

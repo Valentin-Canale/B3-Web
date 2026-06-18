@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Servicios
+description: Servicios de arquitectura, construcción, consultoría y más. B3 Construcción ofrece soluciones integrales para tu proyecto.
+permalink: /servicios/
+---
+
+<section class="servicios-section">
+
+    <h1 class="page-title fade-in">Servicios</h1>
+
+    <div class="servicios-grid">
+        {% for cat in servicios.categorias %}
+        <div class="servicio-category fade-in">
+            <h3>{{ cat.nombre }}</h3>
+            <ul>
+                {% for item in cat.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>

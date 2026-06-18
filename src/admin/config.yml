@@ -1,0 +1,90 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/img/uploads"
+public_folder: "/img/uploads"
+
+locale: "es"
+
+collections:
+  - name: "proyectos"
+    label: "Proyectos"
+    label_singular: "Proyecto"
+    folder: "src/proyectos"
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["order", "title"]
+    summary: "{{title}} — {{ubicacion}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "proyecto.njk" }
+      - { label: "Nombre del Proyecto", name: "title", widget: "string" }
+      - { label: "Thumbnail (Home)", name: "thumbnail", widget: "image", hint: "Imagen que se muestra en la grilla de proyectos del home (600x750px recomendado)" }
+      - { label: "Ubicación", name: "ubicacion", widget: "string" }
+      - { label: "Estado", name: "anio", widget: "string", hint: "Ej: Finalizado, En proceso" }
+      - { label: "Superficie", name: "superficie", widget: "string", required: false }
+      - { label: "Tipo de Obra", name: "tipo", widget: "string", hint: "Ej: Reforma integral, Acondicionamiento" }
+      - { label: "Orden", name: "order", widget: "number", default: 10, hint: "Menor número = aparece primero" }
+      - { label: "Galería de Fotos", name: "galeria", widget: "list", field: { label: "Imagen", name: "imagen", widget: "image" }, hint: "Las fotos se muestran alternando filas de 2 y 1" }
+      - { label: "Descripción", name: "body", widget: "markdown" }
+
+  - name: "paginas"
+    label: "Páginas"
+    files:
+      - label: "El Equipo"
+        name: "equipo"
+        file: "src/_data/equipo.json"
+        fields:
+          - { label: "Foto del Equipo", name: "foto", widget: "image" }
+          - { label: "Título", name: "titulo", widget: "string", default: "B3 Construcción" }
+          - { label: "Párrafo 1", name: "parrafo1", widget: "text" }
+          - { label: "Párrafo 2", name: "parrafo2", widget: "text" }
+          - { label: "Párrafo 3", name: "parrafo3", widget: "text" }
+          - { label: "Texto adicional", name: "texto_adicional", widget: "text" }
+          - label: "Misión"
+            name: "mision"
+            widget: "text"
+          - label: "Visión"
+            name: "vision"
+            widget: "text"
+          - label: "Valores"
+            name: "valores"
+            widget: "text"
+
+      - label: "Contacto"
+        name: "contacto"
+        file: "src/_data/contacto.json"
+        fields:
+          - { label: "Foto", name: "foto", widget: "image" }
+          - { label: "Dirección", name: "direccion", widget: "string" }
+          - { label: "Ciudad", name: "ciudad", widget: "string" }
+          - { label: "Teléfono", name: "telefono", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "WhatsApp (número completo sin +)", name: "whatsapp", widget: "string" }
+          - { label: "Google Maps Embed URL", name: "mapa_url", widget: "string" }
+
+      - label: "Servicios"
+        name: "servicios"
+        file: "src/_data/servicios.json"
+        fields:
+          - label: "Categorías"
+            name: "categorias"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - label: "Servicios"
+                name: "items"
+                widget: "list"
+                field: { label: "Servicio", name: "servicio", widget: "string" }
+
+  - name: "configuracion"
+    label: "Configuración"
+    files:
+      - label: "Datos Generales"
+        name: "general"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Nombre del sitio", name: "nombre", widget: "string", default: "B3 Construcción" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Construyendo confianza." }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "WhatsApp (número completo sin +)", name: "whatsapp", widget: "string", default: "5491144706728" }

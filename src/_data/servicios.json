@@ -1,0 +1,44 @@
+{
+  "categorias": [
+    {
+      "nombre": "Arquitectura",
+      "items": [
+        "Remodelaciones y ampliaciones",
+        "Planos y anteproyectos",
+        "Visualizaciones 3D y renders",
+        "Arquitectura sostenible / eficiencia energética",
+        "Diseño de interiores y mobiliario a medida"
+      ]
+    },
+    {
+      "nombre": "Construcción",
+      "items": [
+        "Construcción llave en mano",
+        "Obras residenciales, comerciales e industriales",
+        "Rehabilitación y refacciones de edificios",
+        "Remodelaciones de cocinas, baños y espacios interiores",
+        "Construcción de estructuras de hormigón, steel frame o tradicional",
+        "Mantenimiento y reparación de edificios"
+      ]
+    },
+    {
+      "nombre": "Consultoría",
+      "items": [
+        "Gestión de proyectos y planificación de obra",
+        "Dirección de obra y supervisión técnica",
+        "Presupuestos y estimación de costos",
+        "Asesoramiento en elección de materiales y acabados",
+        "Trámites municipales y legales"
+      ]
+    },
+    {
+      "nombre": "Servicios Especiales",
+      "items": [
+        "Paisajismo y diseño de exteriores",
+        "Construcción de piscinas y decks",
+        "Diseño y ejecución de espacios comerciales",
+        "Remodelación de fachadas y diseño urbano"
+      ]
+    }
+  ]
+}

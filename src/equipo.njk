@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: El Equipo
+description: Conocé al equipo de B3 Construcción. Más de 40 años de experiencia en construcción y remodelación en Buenos Aires.
+permalink: /equipo/
+---
+
+<section class="equipo-section">
+
+    <h1 class="page-title fade-in">El Equipo</h1>
+
+    <div class="equipo-hero fade-in">
+        <img src="{{ equipo.foto }}" alt="B3 Construcción - Equipo" class="hero-image">
+        <div class="hero-text">
+            <h2>{{ equipo.titulo }}</h2>
+            <p>{{ equipo.parrafo1 }}</p>
+            <p>{{ equipo.parrafo2 }}</p>
+            <p>{{ equipo.parrafo3 }}</p>
+        </div>
+    </div>
+
+    <div class="equipo-content fade-in">
+        <p>{{ equipo.texto_adicional }}</p>
+    </div>
+
+    <div class="values-grid fade-in">
+        <div class="value-card">
+            <h3>Misión</h3>
+            <div class="divider"></div>
+            <p>{{ equipo.mision }}</p>
+        </div>
+        <div class="value-card">
+            <h3>Visión</h3>
+            <div class="divider"></div>
+            <p>{{ equipo.vision }}</p>
+        </div>
+        <div class="value-card">
+            <h3>Valores</h3>
+            <div class="divider"></div>
+            <p>{{ equipo.valores }}</p>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,12 @@
+{
+  "name": "b3-construccion",
+  "version": "1.0.0",
+  "description": "B3 Construcción - Sitio web institucional con CMS",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

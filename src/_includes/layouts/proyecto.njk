@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+
+<section class="proyecto-detalle">
+
+    <div class="proyecto-header fade-in" style="text-align: center; margin-top: 60px;">
+        <h1 class="proyecto-titulo">{{ title }}</h1>
+        <div class="proyecto-meta" style="justify-content: center;">
+            {% if ubicacion %}<span>{{ ubicacion }}</span>{% endif %}
+            {% if anio %}<span>{{ anio }}</span>{% endif %}
+            {% if superficie %}<span>{{ superficie }}</span>{% endif %}
+            {% if tipo %}<span>{{ tipo }}</span>{% endif %}
+        </div>
+    </div>
+
+    <div class="proyecto-descripcion fade-in" style="text-align: center; margin: 40px auto 60px;">
+        {{ content | safe }}
+    </div>
+
+    {% if galeria and galeria.length %}
+    <div class="proyecto-galeria">
+        {% set images = galeria %}
+        {% set i = [0] %}
+        {% for img in images %}
+            {% set idx = loop.index0 %}
+            {% if idx % 3 == 0 %}
+            <div class="galeria-row cols-2 fade-in">
+                <div class="galeria-item"><img src="{{ images[idx] }}" alt="{{ title }}" loading="lazy"></div>
+                {% if images[idx + 1] %}
+                <div class="galeria-item"><img src="{{ images[idx + 1] }}" alt="{{ title }}" loading="lazy"></div>
+                {% endif %}
+            </div>
+            {% elif idx % 3 == 2 %}
+            <div class="galeria-row cols-1 fade-in">
+                <div class="galeria-item"><img src="{{ images[idx] }}" alt="{{ title }}" loading="lazy"></div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="proyecto-nav fade-in" style="text-align: center; margin: 60px 0;">
+        <a href="/">&#8592; Volver a Proyectos</a>
+    </div>
+
+</section>

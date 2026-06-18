@@ -1,0 +1,885 @@
+/* ============================================
+   B3 Construcción - Estilo inspirado en Estudio María Santos
+   Tipografía elegante, minimalismo, espacios blancos
+   ============================================ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #4a4a4a;
+    background-color: #fff;
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---- Header / Navigation ---- */
+.site-header {
+    padding: 40px 0 0;
+    text-align: center;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo-container img {
+    height: 80px;
+    margin: 0 auto;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 6px;
+}
+
+nav.main-nav {
+    padding: 20px 0 0;
+}
+
+nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+nav.main-nav ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: #4a4a4a;
+    text-transform: none;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+nav.main-nav ul li a:hover {
+    opacity: 1;
+    border-bottom-color: #4a4a4a;
+}
+
+nav.main-nav ul li a.active {
+    border-bottom-color: #4a4a4a;
+    color: #1a1a1a;
+}
+
+.nav-divider {
+    width: 100%;
+    height: 1px;
+    background: #e8e8e8;
+    margin-top: 20px;
+}
+
+/* ---- Burger Menu (Mobile) ---- */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+    position: relative;
+}
+
+.burger-btn span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #1a1a1a;
+    margin: 6px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-btn.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.97);
+    z-index: 1050;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.mobile-nav-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.mobile-nav-overlay ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.mobile-nav-overlay ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav-overlay ul li a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay ul li a:hover {
+    opacity: 0.5;
+}
+
+.mobile-nav-overlay ul li a.active {
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 4px;
+}
+
+/* ---- Page Title (El Estudio style) ---- */
+.page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+/* ---- Projects Grid (Home) ---- */
+.projects-section {
+    padding: 60px 80px 80px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: auto;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.03);
+}
+
+.project-card .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+/* ---- Equipo / About Section ---- */
+.equipo-section {
+    padding: 60px 80px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.equipo-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.equipo-hero .hero-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.equipo-hero .hero-text {
+    padding-top: 20px;
+}
+
+.equipo-hero .hero-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    font-variant-numeric: lining-nums;
+}
+
+.equipo-hero .hero-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+}
+
+.equipo-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.equipo-content p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+}
+
+/* Section subtitle */
+.section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    color: #1a1a1a;
+    margin: 60px 0 30px;
+}
+
+/* Mission / Visión Cards */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.value-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.value-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #6a6a6a;
+}
+
+.value-card .divider {
+    width: 40px;
+    height: 1px;
+    background: #c8b89e;
+    margin: 0 auto 25px;
+}
+
+/* ---- Servicios ---- */
+.servicios-section {
+    padding: 60px 80px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.servicio-category {
+    padding: 0;
+}
+
+.servicio-category h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0d8cf;
+}
+
+.servicio-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicio-category ul li {
+    font-size: 14px;
+    color: #5a5a5a;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ece6;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.servicio-category ul li:hover {
+    color: #1a1a1a;
+    padding-left: 10px;
+}
+
+/* ---- Contacto ---- */
+.contacto-section {
+    padding: 60px 80px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.contacto-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.contacto-info {
+    padding-top: 20px;
+}
+
+.contacto-info .logo-contact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contacto-info .logo-contact .logo-img-contact {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+.contacto-details {
+    text-align: center;
+}
+
+.contacto-details p {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.contacto-details a {
+    color: #5a5a5a;
+}
+
+.contacto-details a:hover {
+    color: #1a1a1a;
+    opacity: 1;
+}
+
+/* Contact Form */
+.contact-form {
+    margin-top: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a4a4a;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #1a1a1a;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    margin-top: 25px;
+    padding: 12px 45px;
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Map */
+.map-container {
+    margin-top: 40px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+.map-container iframe:hover {
+    filter: grayscale(0%);
+}
+
+/* ---- Footer ---- */
+.site-footer {
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 40px;
+}
+
+.footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.footer-copyright {
+    font-size: 11px;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    opacity: 1;
+}
+
+.whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+}
+
+/* Back to top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    width: 40px;
+    height: 40px;
+    background: rgba(26, 26, 26, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.back-to-top svg {
+    width: 16px;
+    height: 16px;
+    fill: #4a4a4a;
+}
+
+/* ---- Animations ---- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-section,
+    .equipo-section,
+    .servicios-section,
+    .contacto-section {
+        padding: 40px 40px 60px;
+    }
+
+    nav.main-nav ul {
+        gap: 35px;
+    }
+
+    .equipo-hero {
+        gap: 40px;
+    }
+
+    .values-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 42px;
+    }
+
+    /* Hide desktop nav, show burger */
+    nav.main-nav ul {
+        display: none;
+    }
+
+    .burger-btn {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .nav-divider {
+        margin-top: 10px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .projects-section,
+    .equipo-section,
+    .servicios-section,
+    .contacto-section {
+        padding: 30px 25px 50px;
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .equipo-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 34px;
+    }
+
+    nav.main-nav ul {
+        gap: 18px;
+    }
+
+    .site-header {
+        padding: 25px 0 0;
+    }
+}
+
+/* ---- Proyecto Detalle (Individual Project Page) ---- */
+.proyecto-detalle {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 80px 80px;
+}
+
+.proyecto-hero {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.proyecto-hero img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+.proyecto-header {
+    margin-bottom: 50px;
+}
+
+.proyecto-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.proyecto-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.proyecto-meta span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-right: 30px;
+    border-right: 1px solid #e0d8cf;
+}
+
+.proyecto-meta span:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.proyecto-descripcion {
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.proyecto-descripcion p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+}
+
+.proyecto-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.galeria-row {
+    display: grid;
+    gap: 25px;
+}
+
+.galeria-row.cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.galeria-row.cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .galeria-row.cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.proyecto-nav {
+    padding-top: 40px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.proyecto-nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+    transition: color 0.3s ease;
+}
+
+.proyecto-nav a:hover {
+    color: #1a1a1a;
+    opacity: 1;
+}
+
+/* Make project cards clickable links */
+a.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .proyecto-detalle {
+        padding: 0 25px 50px;
+    }
+
+    .proyecto-titulo {
+        font-size: 36px;
+    }
+
+    .proyecto-meta {
+        gap: 15px;
+    }
+
+    .proyecto-meta span {
+        padding-right: 15px;
+    }
+}

@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Contacto
+description: Contactá a B3 Construcción. Dirección Maipú 1300, CABA. Teléfono +54 9 11 4470-6728.
+permalink: /contacto/
+---
+
+<section class="contacto-section">
+
+    <h1 class="page-title fade-in">Contacto</h1>
+
+    <div class="contacto-grid fade-in">
+
+        <img src="{{ contacto.foto }}" alt="B3 Construcción - Oficina" class="contacto-image">
+
+        <div class="contacto-info">
+
+            <div class="logo-contact">
+                <img src="{{ site.logo }}" alt="B3 Construcción" class="logo-img-contact">
+            </div>
+
+            <div class="contacto-details">
+                <p>{{ contacto.direccion }}<br>{{ contacto.ciudad }}</p>
+                <p><a href="tel:{{ contacto.telefono | replace(' ', '') | replace('-', '') }}">{{ contacto.telefono }}</a></p>
+                <p><a href="mailto:{{ contacto.email }}">{{ contacto.email }}</a></p>
+            </div>
+
+            <form class="contact-form" action="#" method="POST" name="contacto" data-netlify="true">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div class="map-container">
+                <iframe src="{{ contacto.mapa_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

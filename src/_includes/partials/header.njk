@@ -1,0 +1,28 @@
+<!-- Header -->
+<header class="site-header">
+    <div class="logo-container">
+        <a href="/"><img src="{{ site.logo }}" alt="{{ site.nombre }}" class="logo-img"></a>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Proyectos</a></li>
+            <li><a href="/equipo/" {% if page.url == "/equipo/" %}class="active"{% endif %}>El Equipo</a></li>
+            <li><a href="/servicios/" {% if page.url == "/servicios/" %}class="active"{% endif %}>Servicios</a></li>
+            <li><a href="/contacto/" {% if page.url == "/contacto/" %}class="active"{% endif %}>Contacto</a></li>
+        </ul>
+        <button class="burger-btn" id="burgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="nav-divider"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Proyectos</a></li>
+            <li><a href="/equipo/" {% if page.url == "/equipo/" %}class="active"{% endif %}>El Equipo</a></li>
+            <li><a href="/servicios/" {% if page.url == "/servicios/" %}class="active"{% endif %}>Servicios</a></li>
+            <li><a href="/contacto/" {% if page.url == "/contacto/" %}class="active"{% endif %}>Contacto</a></li>
+        </ul>
+    </div>
+</header>
