@@ -5,6 +5,18 @@ backend:
 media_folder: "src/img/uploads"
 public_folder: "/img/uploads"
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dp00oywvy
+    api_key: "445743536827574"
+    multiple: true
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+          crop: limit
+          width: 1600
+
 locale: "es"
 
 collections:
